@@ -126,8 +126,7 @@ INSERT INTO `tmp_trunctables` VALUES
 ;
 
 -- This is the sproc which runs through the tmp table and truncates
-DELIMITER ||
-DROP PROCEDURE IF EXISTS `ccdata_empty_testdata`||
+DROP PROCEDURE IF EXISTS `ccdata_empty_testdata`;
 
 CREATE PROCEDURE ccdata_empty_testdata ()
 MODIFIES SQL DATA
@@ -151,10 +150,9 @@ BEGIN
 		UNTIL done = 1
 	END REPEAT;
 	CLOSE cur_1;
-END;||
+END;
 
-CALL ccdata_empty_testdata()||
-DROP PROCEDURE IF EXISTS `ccdata_empty_testdata`||
-DELIMITER ;||
+CALL ccdata_empty_testdata();
+DROP PROCEDURE IF EXISTS `ccdata_empty_testdata`;
 
 SET FOREIGN_KEY_CHECKS = 1;
